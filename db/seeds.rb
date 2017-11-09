@@ -1,16 +1,21 @@
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+puts "Cleaning database..."
+Ingredient.destroy_all
 
 require "open-uri"
 require "nokogiri"
+require "json"
 
-# url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-# document = Nokogiri::HTML(open(url))
+url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+document = open(url).read
+ingredients = JSON.parse(document)
 
-# document.search("drinks").each do |ingredient|
-#   ingredient = bar.search("strIngredient1")
+ingredients["drinks"].each do |ingredient|
+  Ingredient.create!(name: ingredient["strIngredient1"])
+end
+puts "Created ingredient seeds from external file!"
 
-#   Ingredient.create!({ name: name })
-#   puts "Ingredient created: #{name}"
-# end
+Cocktail.create(name: "Mojito")
+Cocktail.create(name: "Gin and Tonic")
+Cocktail.create(name: "Old Fashioned")
+Cocktail.create(name: "Martini")
+Cocktail.create(name: "Cosmopolitan")

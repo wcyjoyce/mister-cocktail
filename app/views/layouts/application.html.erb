@@ -7,8 +7,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <h1>Mister Cocktail</h1>
+  <body style="background-color:#272424">
+    <div class="navbar">
+      <div class="img">
+        <%= image_tag "logo", alt: "logo", width: "100px" %>
+      </div>
+    </div>
+
+    </div>
+
     <%= yield %>
+
   </body>
 </html>
