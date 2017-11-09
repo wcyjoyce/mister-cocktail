@@ -1,0 +1,16 @@
+<h2>Add New Cocktail</h2>
+
+<div class="form">
+  <%= simple_form_for(@cocktail) do |c| %>
+    <%= c.input :name %>
+    <%= c.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="link">
+    <%= link_to cocktails_path do %>
+      <i class="fa fa-undo" aria-hidden="true"></i> Back to List
+    <% end %>
+</div>

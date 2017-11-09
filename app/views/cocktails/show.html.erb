@@ -1,0 +1,20 @@
+<h2><%= @cocktail.name %></h2>
+
+<p>Cocktail Ingredients:</p>
+<p><%= @cocktail.ingredients.name %></p>
+
+<hr>
+
+<div class="link">
+  <div>
+    <%= link_to cocktails_path do %>
+      <i class="fa fa-undo" aria-hidden="true"></i> Back to List
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_cocktail_dose_path(@cocktail) do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Add Dosage
+    <% end %>
+  </div>
+</div>
+
