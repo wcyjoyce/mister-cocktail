@@ -7,7 +7,6 @@
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo %>)";>
             <div class="card-body">
               <h5><%= cocktail.name %></h5>
-              <p><%= cocktail.description %></p>
               <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
             </div>
             <!-- Link -->
@@ -23,7 +22,6 @@
                 <!-- Hover  -->
                 <div class="card-body">
                   <h5><%= cocktail.name %></h5>
-                  <p><%= cocktail.description %></p>
                 <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
                 </div>
               </div>

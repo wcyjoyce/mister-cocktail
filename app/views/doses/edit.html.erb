@@ -1,0 +1,15 @@
+<h2>Edit Cocktail Ingredient</h2>
+
+<p><%= @dose.cocktail.name %></p>
+
+<div class="input">
+  <%= render "form", dose: @dose %>
+</div>
+
+<hr>
+
+<div class="link">
+    <%= link_to cocktail_path(@cocktail) do %>
+      <i class="fa fa-undo" aria-hidden="true"></i> Back to <%= @dose.cocktail.name %>
+    <% end %>
+</div>

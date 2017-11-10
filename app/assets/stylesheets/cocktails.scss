@@ -1,7 +1,29 @@
-.container {
-  padding-top: 20px !important;
+.display {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 30% 40% 30%;
+  width: 100%;
+  padding: 25px 0px;
 }
 
-.row {
-  margin: 20px -15px 0px -15px !important;
+.image {
+  grid-row: 1 / span 2;
+}
+
+.description {
+  grid-row: 1 / span 1;
+}
+
+.ingredients {
+  grid-row: 1 / span 1;
+  margin-left: 10px;
+}
+
+.ratings {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+}
+
+.padding {
+  padding: 0px 10px;
 }

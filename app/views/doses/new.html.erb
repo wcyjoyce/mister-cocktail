@@ -2,14 +2,7 @@
 <h3>Add New Dosage</h3>
 
 <div class="input">
-  <%= simple_form_for [@cocktail, @dose] do |d| %>
-    <%= d.input :description, prompt: "Please enter dosage" %>
-    <%= d.association :ingredient,
-      collection: Ingredient.order(:name),
-      prompt: "Please select:"
-    %>
-    <%= d.submit "Submit", class: "btn btn-default" %>
-  <% end %>
+  <%= render "form", dose: @dose %>
 </div>
 
 <hr>
