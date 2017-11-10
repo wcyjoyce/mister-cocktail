@@ -5,15 +5,29 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   </head>
 
-  <body style="background-color:#272424">
+  <body>
     <div class="navbar">
+      <!-- Logo -->
       <div class="img">
-        <%= image_tag "logo", alt: "logo", width: "100px" %>
+        <%= link_to cocktails_path do %>
+          <%= image_tag "logo", alt: "logo", width: "100px" %>
+        <% end %>
       </div>
-    </div>
+      <!-- Search -->
+      <div class="search">
 
+      </div>
+      <!-- Add Cocktail -->
+      <div class="link">
+        <%= link_to new_cocktail_path do %>
+          <i class="fa fa-plus" aria-hidden="true"></i> Add New Cocktail
+        <% end %>
+      </div>
     </div>
 
     <%= yield %>

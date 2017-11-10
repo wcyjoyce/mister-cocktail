@@ -1,10 +1,13 @@
 <h2><%= @cocktail.name %></h2>
 <h3>Add New Dosage</h3>
 
-<div class="form">
+<div class="input">
   <%= simple_form_for [@cocktail, @dose] do |d| %>
-    <%= d.input :description %>
-    <%= d.association :ingredient %>
+    <%= d.input :ingredient,
+      collection: Ingredient.order(:name),
+      prompt: "Please select:"
+    %>
+    <%= d.input :description, prompt: "Please enter dosage" %>
     <%= d.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>
