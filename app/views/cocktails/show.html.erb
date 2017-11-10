@@ -1,4 +1,5 @@
 <h2><%= @cocktail.name %></h2>
+<%= cl_image_tag @cocktail.photo, height: 400, width: 300, crop: :fill %>
 
 <h3>Description:</h3>
 <p><%= @cocktail.description %></p>
@@ -16,14 +17,22 @@
 </ul>
 
 <div class="link">
+  <!-- Back to Cocktail List -->
   <div>
     <%= link_to cocktails_path do %>
       <i class="fa fa-undo" aria-hidden="true"></i> Back to List
     <% end %>
   </div>
+  <!-- Add Ingredient -->
   <div>
     <%= link_to new_cocktail_dose_path(@cocktail) do %>
       <i class="fa fa-plus" aria-hidden="true"></i> Add Ingredient
+    <% end %>
+  </div>
+  <!-- Edit Cocktail Description -->
+  <div>
+    <%= link_to edit_cocktail_path(@cocktail) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i> Edit Cocktail Description
     <% end %>
   </div>
 </div>
